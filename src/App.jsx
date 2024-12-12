@@ -66,7 +66,7 @@ function App() {
       // });
       alert("성공");
     }
-  }, []);
+  }, [qrData]);
 
   //
 
