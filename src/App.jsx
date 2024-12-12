@@ -82,16 +82,17 @@ function App() {
   useEffect(() => {
     if (qrData) {
       //데이터베이스에서 보내는 작업
-      toast.success(`${qrData} 성공`, {
-        position: "top-center",
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: "light",
-      });
+      // toast.success(`${qrData} 성공`, {
+      //   position: "top-center",
+      //   autoClose: 5000,
+      //   hideProgressBar: false,
+      //   closeOnClick: true,
+      //   pauseOnHover: true,
+      //   draggable: true,
+      //   progress: undefined,
+      //   theme: "light",
+      // });
+      alert("성공");
     }
   }, []);
 
