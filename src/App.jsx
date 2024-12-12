@@ -32,20 +32,19 @@ function App() {
         if (videoRef.current) {
           videoRef.current.srcObject = stream;
         }
-
-        if (permissionGranted === null) {
-          requestCameraPermission();
-        }
-
-        return () => {
-          if (videoStream) {
-            videoStream.getTracks().forEach((track) => {
-              track.stop();
-            });
-          }
-        };
       } catch (error) {
         console.log(error);
+      }
+    };
+    if (permissionGranted === null) {
+      requestCameraPermission();
+    }
+
+    return () => {
+      if (videoStream) {
+        videoStream.getTracks().forEach((track) => {
+          track.stop();
+        });
       }
     };
   }, [permissionGranted, videoStream]);
@@ -97,7 +96,6 @@ function App() {
   }, []);
 
   // 위도 경도 가져오기
-
   useEffect(() => {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(
